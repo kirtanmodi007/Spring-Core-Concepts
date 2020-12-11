@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd">
+
+ 
+ 
+ 	<bean class = "com.springDurgeshFinal.StudentBean" name = "Student">
+ 	<!--Now we need to take ke aapde aa StudentBean class na object creation vakhte
+ 	kai kai properties set karwa mangiye 6iye. -->
+ 		<property name = "studentId">
+ 			<!--  now we need to set values for all those properties as well. -->
+ 			<value> 1122 </value>
+ 		</property>
+ 		
+ 		<property name = "studentName">
+ 			<!--  now we need to set values for all those properties as well. -->
+ 			<value>Kirtan Modi</value>
+ 		</property>
+ 		
+ 		<property name = "studentAddress">
+ 			<!--  now we need to set values for all those properties as well. -->
+ 			<value>New York</value>
+ 		</property>
+ 	</bean>	
+ 	
+ 	<!--  Now I will rpovide the required CONFIGURATION for OUR EMPLOYEE CLASS BEAN HERE -->
+ 	<!-- Have tu jyare Bean create kare, you need to mention ke tu kaya class mate kare. -->
+	
+ 	<bean class="com.springDurgeshFinal.Employee" name = "Employee1">
+ 		<property name = "employeeName" value = "Kirtan"/>
+ 		
+ 		<!-- Now employeeNumbers ae aapde as a LIST declare karyu 6e, -->
+ 		<property name = "employeeNumbers">
+ 			<list>
+ 				<value>
+ 					8628670077
+ 				</value>
+ 				
+ 				<value>
+ 					8628670078
+ 				</value>
+ 				
+ 				<value>
+ 					8628670079
+ 				</value>
+ 				
+ 				<value>
+ 					86286700987
+ 				</value>
+ 			</list>
+ 		</property>	
+ 		
+ 		<!--  employeeAddress aapde Set form ma declare karyu 6e. -->
+ 		<property name = "employeeAddress">
+ 			<set>
+ 				<value>
+ 					24 Stag St., Nj, 07306
+ 				</value>
+ 				
+ 				<value>
+ 					314 Saint Pauls, Nj, 07306
+ 				</value>
+ 				
+ 				<value>
+ 					54 Dales Ave, Nj, 07306
+ 				</value>
+ 			</set>
+ 		</property>	
+ 		
+ 		<property name = "employeeCourses">
+ 			<map>
+ 				<entry key = "Java" value = "27 hours"/>
+ 				<entry key = "Python" value = "22 hours"/>
+ 				<entry key = "C#" value = "2 hours"/>
+ 				<entry key = "C++" value = "0 hours"/>
+ 			</map>
+ 		</property>	
+ 	</bean>
+ 	
+ 	<bean class = "com.springDurgeshFinal.ReferenceProviderClass" name = "rpc">
+ 		<property name="y" value ="7"/> 	 	
+ 	</bean>
+ 	
+ 	<bean class = "com.springDurgeshFinal.ReferenceNeededClass" name = "rnc"> 
+ 		<property name="x" value = "17"/>
+ 		
+ 		<!-- Reference insert karwa mate we need to use "ref" tag -->
+ 		<property name="rpc">
+ 		
+ 		<!-- When you write bean inside ref tag, that means ke aapde kaya bean ne
+ 		kaya class ni dependency 6e ae provide kariye 6iye -->
+ 			<ref bean = "rpc"/> 
+ 		</property>
+ 	</bean>
+ 
+  </beans> 

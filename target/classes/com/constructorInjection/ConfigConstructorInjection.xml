@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:c="http://www.springframework.org/schema/c"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd">
+ 
+ 	<bean class = "com.constructorInjection.Certificate" name = "certificateBean">
+ 	<constructor-arg value = "AWS Cloud Practiosner" type = "String"/>
+ 	</bean>
+
+	<bean class = "com.constructorInjection.Employee" name = "employeeBean">
+		<constructor-arg>
+			<value>Kirtan Modi</value>
+		</constructor-arg>
+		
+		<constructor-arg>
+			<value>1401122</value>
+		</constructor-arg>
+		
+		<constructor-arg ref = "certificateBean"/>
+		
+		<constructor-arg>
+			<list>
+				<value>Java</value>
+				<value>Python</value>
+				<value>C++</value>
+				<value>C#</value>
+			</list>
+		</constructor-arg>
+		
+	</bean>
+	
+	<!-- Now we are creating a new BEAN for our Addition class -->
+	<bean class = "com.constructorInjection.Addition" name = "additionBean">
+		<constructor-arg value = "12" type = "int"/>
+		<constructor-arg value = "13" type = "int"/>
+	</bean>
+ 
+</beans> 

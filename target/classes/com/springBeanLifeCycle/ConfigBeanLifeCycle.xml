@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:c="http://www.springframework.org/schema/c"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd">
+ 
+ <context:annotation-config/>
+ 
+ 	<bean class = "com.springBeanLifeCycle.Student" name = "StudentBean" init-method="init" destroy-method="destroy">
+ 		<property name="firstName" value = "Kirtan"/>
+ 		<property name="lastName" value = "Modi"/>
+ 	</bean>
+ 	
+ 	<bean class = "com.springBeanLifeCycle.Employee" name = "EmployeeBean">
+ 		<property name = "employeeFirstName" value = "Amitabh"/>
+ 		<property name = "employeeLastName" value = "Bachhan"/>
+ 	</bean>
+ 	
+ 	<bean class = "com.springBeanLifeCycle.Professor" name = "ProfessorBean">
+ 		<property name = "professorFirstName" value = "Shahrukh"/>
+ 		<property name = "professorLastName" value = "Khan"/>
+ 	</bean>
+ 
+ 
+ </beans>
